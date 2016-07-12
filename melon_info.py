@@ -2,16 +2,25 @@
 Prints out all the melons in our inventory
 """
 
-from melons import melon_names, melon_seedlessness, melon_prices
+from melons import melon_info
 
 
-def print_melon(name, seedless, price):
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
+# def print_melon():
+#     for melon, value in melon_info.items():
+#         print melon
+#         for attribute, value in attributes.items():
+#             print "{}: {}".format(attribute, value)
+#         print
 
-    print "{}s {} seeds and are ${:.2f}".format(name, have_or_have_not, price)
+# print_melon()
 
+def print_melon():  #define function print_melon
+    for melon, value in melon_info.items():  #for each 'melon, value' tuple in dictionary melon_info
+        print melon  #print to console melon
+        for value, value2 in value.items():  #and then for each "key, value" within each melon dictionary
+            print "{}: {}".format(value, value2) #print key, value
+        print  #add a new line?
 
-for i in melon_names:
-    print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
+print_melon()
+
+# key and value can be named anything
